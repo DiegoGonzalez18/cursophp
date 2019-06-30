@@ -1,6 +1,20 @@
 <?php
 $var1=1;
 $name="Diego Gonzalez";
+$jobs =[
+  [
+    'title'=>'PHP Developer',
+    'description'=> 'This is an aweome job!!!'
+  ],
+  [
+    'title'=>'Python Dev',
+    'description'=> 'This is an aweome job!!!'
+  ],
+  [
+    'title'=>' Devopsr',
+  
+  ]
+  ]
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +45,7 @@ $name="Diego Gonzalez";
           <li>Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="452d2026312a370528242c296b262a28">[email&#160;protected]</a></li>
           <li>Phone: 1234567890</li>
           <li>LinkedIn: https://linkedin.com</li>
-          <li>Twitter: @hectorbenitez</li>
+          <li>Twitter: @DiegoGonzalez</li>
         </ul>
       </div>
     </div>
@@ -50,8 +64,8 @@ $name="Diego Gonzalez";
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <li class="work-position">
-              <h5>PHP Developer</h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
+              <h5><?php echo $jobs[0]['title']?></h5>
+              <p><?php echo $jobs[0]['description']?></p>
               <strong>Achievements:</strong>
               <ul>
                 <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
@@ -60,7 +74,7 @@ $name="Diego Gonzalez";
               </ul>
             </li>
             <li class="work-position">
-                <h5>PHP Developer</h5>
+                <h5><?php echo $jobs[1]['title']?></h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
                 <strong>Achievements:</strong>
                 <ul>
@@ -70,7 +84,7 @@ $name="Diego Gonzalez";
                 </ul>
               </li>
               <li class="work-position">
-                  <h5>PHP Developer</h5>
+                  <h5><?php echo $jobs[2]['title']?></h5>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
                   <strong>Achievements:</strong>
                   <ul>
