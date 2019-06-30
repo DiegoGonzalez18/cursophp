@@ -1,21 +1,12 @@
 <?php
-$var1=1;
-$name="Diego Gonzalez";
-$jobs =[
-  [
-    'title'=>'PHP Developer',
-    'description'=> 'This is an aweome job!!!'
-  ],
-  [
-    'title'=>'Python Dev',
-    'description'=> 'This is an aweome job!!!'
-  ],
-  [
-    'title'=>' Devopsr',
-  
-  ]
-  ]
+
+require_once('jobs.php');
+
+$name = 'Hector Benitez';
+$limitMonths = 2000;
+
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -39,13 +30,13 @@ $jobs =[
         <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
       </div>
       <div class="col">
-        <h1><?php echo $name ?></h1>
+        <h1><?php echo $name; ?></h1>
         <h2>PHP Developer</h2>
         <ul>
-          <li>Mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="452d2026312a370528242c296b262a28">[email&#160;protected]</a></li>
+          <li>Mail: hector@mail.com</li>
           <li>Phone: 1234567890</li>
           <li>LinkedIn: https://linkedin.com</li>
-          <li>Twitter: @DiegoGonzalez</li>
+          <li>Twitter: @hectorbenitez</li>
         </ul>
       </div>
     </div>
@@ -63,36 +54,18 @@ $jobs =[
         <div>
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
-            <li class="work-position">
-              <h5><?php echo $jobs[0]['title']?></h5>
-              <p><?php echo $jobs[0]['description']?></p>
-              <strong>Achievements:</strong>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-              </ul>
-            </li>
-            <li class="work-position">
-                <h5><?php echo $jobs[1]['title']?></h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
-                <strong>Achievements:</strong>
-                <ul>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                </ul>
-              </li>
-              <li class="work-position">
-                  <h5><?php echo $jobs[2]['title']?></h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
-                  <strong>Achievements:</strong>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  </ul>
-                </li>
+            <?php
+            $totalMonths = 0;
+            for($idx = 0;$idx < count($jobs); $idx++) {
+              // $totalMonths = $totalMonths + $jobs[$idx]['months'];
+              $totalMonths += $jobs[$idx]->months;
+              if($totalMonths > $limitMonths) {
+                break;
+              }
+
+              printJob($jobs[$idx]);
+            }
+            ?>
           </ul>
         </div>
         <div>
@@ -161,7 +134,7 @@ $jobs =[
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
